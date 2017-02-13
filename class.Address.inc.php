@@ -5,7 +5,7 @@
  */
 class Address {
     // Street address.
-    public $street_address_1;
+    protected $_street_address_1;
     public $street_address_2;
     
     // Name of the City.
@@ -27,6 +27,14 @@ class Address {
     protected $_time_created;
     protected $_time_updated;
 
+    /**
+     * Guess the postal code given the subdivision and city name.
+     * @todo Replace with a database lookup.
+     * @return string
+     */
+    protected function _postal_code_guess() {
+        return 'LOOKUP';
+    }
 
     /**
      * Display an address in HTML.
